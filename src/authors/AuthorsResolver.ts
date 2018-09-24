@@ -1,3 +1,4 @@
+/*
 import { Resolver, ResolveProperty, Query, Args, Parent } from "@nestjs/graphql";
 
 @Resolver('Author')
@@ -18,3 +19,4 @@ export class AuthorResolver {
     return await this.postsService.findAll({ authorId: id });
   }
 }
+*/

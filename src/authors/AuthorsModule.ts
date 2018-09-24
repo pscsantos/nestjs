@@ -1,3 +1,4 @@
+/*
 import { AuthorResolver } from "./AuthorsResolver";
 import { Module } from "@nestjs/common";
 
@@ -7,3 +8,4 @@ import { Module } from "@nestjs/common";
     providers: [AuthorService, AuthorResolver],
 })
 export class AuthorModule{}
+*/

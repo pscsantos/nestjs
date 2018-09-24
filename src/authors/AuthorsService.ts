@@ -1,5 +1,5 @@
-import { Injectable } from '@nestjs/common';
-import { Author } from './interfaces/author.interface';
+/*import { Injectable } from '@nestjs/common';
+import {  }
 
 @Injectable()
 export class AuthorService {
@@ -13,3 +13,4 @@ export class AuthorService {
         return this.cats;
     }
 }
+*/
