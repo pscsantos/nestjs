@@ -2,12 +2,12 @@ import {
   Entity,
   Column,
   PrimaryGeneratedColumn,
-  BaseEntity
 }
   from 'typeorm';
 
 @Entity()
-export class Photo extends BaseEntity {
+export class Photo {
+  
   @PrimaryGeneratedColumn()
   id: number;
 
