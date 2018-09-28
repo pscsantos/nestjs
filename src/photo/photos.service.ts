@@ -1,10 +1,10 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { Photo } from './entitys/photo.entity';
+import { Photo } from './entity/photo.entity';
 
 @Injectable()
-export class PhotoService {
+export class PhotosService {
     constructor(
         @InjectRepository(Photo)
         private readonly photoRepository: Repository<Photo>,
@@ -14,6 +14,7 @@ export class PhotoService {
         await this.photoRepository.save(Photo)
             .then(post => console.log("Post has been saved: ", post))
             .catch(error => console.log("Cannot save. Error: ", error));
+            return Photo;
     }
 
     async findAll(): Promise<Photo[]> {

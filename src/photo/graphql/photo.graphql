@@ -1,0 +1,29 @@
+type Photo{
+    id: Int!
+    name: String
+    description: String
+    filename: String
+    views: Int
+    isPublished: Boolean
+}
+
+type Query {
+  photo(id: Int!): Photo
+  allPhotos: [Photo]
+}
+
+type Mutation{
+  createPhoto(createPhotoInput: CreatePhotoInput): Photo
+}
+
+type Subscription {
+  photoCreated: Photo
+}
+
+input CreatePhotoInput{
+    name: String
+    description: String
+    filename: String
+    views: Int
+    isPublished: Boolean
+}

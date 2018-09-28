@@ -1,13 +1,11 @@
 import { Controller, Get, Body, Post, Put, Param } from '@nestjs/common';
-import { PhotoService } from './photo.service';
-
-import { createConnection } from 'net';
-import { Photo } from './entitys/photo.entity';
+import { PhotosService } from './photos.service';
+import { Photo } from './entity/photo.entity';
 
 @Controller('photo')
 export class PhotoController {
     
-    constructor(private readonly photoService: PhotoService) { }
+    constructor(private readonly photoService: PhotosService) { }
 
     @Post()
     async create(@Body() Photo) {
@@ -18,5 +16,5 @@ export class PhotoController {
     async findAll(): Promise<Photo[]> {
         return this.photoService.findAll();
     }
-    
+
 }
