@@ -1,5 +1,5 @@
 type Photo{
-    id: Int!
+    id: ID!
     name: String
     description: String
     filename: String
@@ -13,7 +13,11 @@ type Query {
 }
 
 type Mutation{
-  createPhoto(createPhotoInput: CreatePhotoInput): Photo
+  createPhoto(name: String,
+    description: String,
+    filename: String,
+    views: Int,
+    isPublished: Boolean): Photo
 }
 
 type Subscription {

@@ -14,7 +14,7 @@ export class Author {
 }
 
 export abstract class IMutation {
-    abstract createPhoto(createPhotoInput?: CreatePhotoInput): Photo | Promise<Photo>;
+    abstract createPhoto(name?: string, description?: string, filename?: string, views?: number, isPublished?: boolean): Photo | Promise<Photo>;
 }
 
 export class Photo {

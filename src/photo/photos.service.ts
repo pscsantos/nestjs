@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { Photo } from './entity/photo.entity';
+import { Photo } from './photo.entity';
 
 @Injectable()
 export class PhotosService {
@@ -9,17 +9,14 @@ export class PhotosService {
         @InjectRepository(Photo)
         private readonly photoRepository: Repository<Photo>,
     ) { }
-
-    async create(Photo) {
-        await this.photoRepository.save(Photo)
+    async findAll(): Promise<Photo[]> {
+        return await this.photoRepository.find();
+    }
+    async create(photo: Photo ): Promise<Photo> {
+        return await this.photoRepository.save(photo);
+        /*
             .then(post => console.log("Post has been saved: ", post))
             .catch(error => console.log("Cannot save. Error: ", error));
-            return Photo;
-    }
-
-    async findAll(): Promise<Photo[]> {
-        var photos = await this.photoRepository.find();
-        console.log(photos);
-        return photos;
+        */            
     }
 }
