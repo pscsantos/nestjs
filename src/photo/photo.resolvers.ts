@@ -18,7 +18,7 @@ export class PhotosResolvers {
         return await this.photosService.findAll();
     }
     @Mutation('createPhoto')
-    async create(@Args('CreatePhotoInput') args: CreatePhotoDto): Promise<Photo> {
+    async create(@Args('CreatePhotoInput') args: Photo): Promise<Photo> {
         const createdPhoto = await this.photosService.create(args);
         //pubSub.publish('photoCreated', { photoCreated: createdPhoto });
         return createdPhoto;

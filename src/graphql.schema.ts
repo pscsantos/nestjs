@@ -18,7 +18,7 @@ export abstract class IMutation {
 }
 
 export class Photo {
-    id: number;
+    id?: number;
     name?: string;
     description?: string;
     filename?: string;
