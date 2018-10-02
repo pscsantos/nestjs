@@ -14,11 +14,11 @@ export class Author {
 }
 
 export abstract class IMutation {
-    abstract createPhoto(name?: string, description?: string, filename?: string, views?: number, isPublished?: boolean): Photo | Promise<Photo>;
+    abstract createPhoto(createPhotoInput: CreatePhotoInput): Photo | Promise<Photo>;
 }
 
 export class Photo {
-    id?: number;
+    id?: string;
     name?: string;
     description?: string;
     filename?: string;

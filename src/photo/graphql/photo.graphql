@@ -13,11 +13,7 @@ type Query {
 }
 
 type Mutation{
-  createPhoto(name: String,
-    description: String,
-    filename: String,
-    views: Int,
-    isPublished: Boolean): Photo
+  createPhoto( createPhotoInput: CreatePhotoInput! ): Photo
 }
 
 type Subscription {
@@ -25,9 +21,9 @@ type Subscription {
 }
 
 input CreatePhotoInput{
-    name: String
-    description: String
-    filename: String
-    views: Int
-    isPublished: Boolean
+  name: String
+  description: String
+  filename: String
+  views: Int
+  isPublished: Boolean
 }

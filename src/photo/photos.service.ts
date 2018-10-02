@@ -12,11 +12,11 @@ export class PhotosService {
     async findAll(): Promise<Photo[]> {
         return await this.photoRepository.find();
     }
-    async create(photo: Photo ): Promise<Photo> {
+    async create(photo: Photo ): Promise<Photo> {        
         return await this.photoRepository.save(photo);
         /*
             .then(post => console.log("Post has been saved: ", post))
             .catch(error => console.log("Cannot save. Error: ", error));
-        */            
+        */               
     }
 }

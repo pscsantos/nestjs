@@ -1,5 +1,7 @@
-import { CreatePhotoInput } from '../../graphql.schema';
-
-export class CreatePhotoDto extends CreatePhotoInput{
-
+export class CreatePhotoDto {
+    name: string;
+    description: string;
+    filename: string;
+    views: number;
+    isPublished: boolean;
 }

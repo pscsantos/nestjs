@@ -9,7 +9,7 @@ import { PhotoModule } from './photo/photo.module';
   imports: [TypeOrmModule.forRoot(), 
             PhotoModule,
             GraphQLModule.forRoot({
-              typePaths: ['./**/*.graphql'],
+              typePaths: ['./**/**/*.graphql'],
               installSubscriptionHandlers: true,
               definitions: {
                 path: join(process.cwd(), 'src/graphql.schema.ts'),

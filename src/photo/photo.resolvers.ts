@@ -1,10 +1,10 @@
 import { ParseIntPipe, UseGuards } from '@nestjs/common';
 import { Args, Mutation, Query, Resolver, Subscription } from '@nestjs/graphql';
 import { PubSub } from 'graphql-subscriptions';
-import { Photo } from '../graphql.schema';
-import { PhotosGuard  } from './photos.guard';
+import { Photo } from './photo.entity';
 import { PhotosService } from './photos.service';
 import { CreatePhotoDto } from './dto/createPhoto.dto';
+//import { Photo } from 'graphql.schema'
 
 const pubSub = new PubSub();
 
@@ -18,8 +18,11 @@ export class PhotosResolvers {
         return await this.photosService.findAll();
     }
     @Mutation('createPhoto')
-    async create(@Args('CreatePhotoInput') args: Photo): Promise<Photo> {
-        const createdPhoto = await this.photosService.create(args);
+    async create(@Args('createPhotoInput') args: CreatePhotoDto): Promise<Photo> {
+        console.log(args);
+        const photo = args as Photo;
+        const createdPhoto = await this.photosService.create( photo );
+        console.log(createdPhoto);
         //pubSub.publish('photoCreated', { photoCreated: createdPhoto });
         return createdPhoto;
     }
